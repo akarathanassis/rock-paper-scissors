@@ -6,7 +6,7 @@ function getComputerChoice() {
     if (value <= 0.33) { 
         return "rock"
     }
-    else if (value >= 0.33 && value <= 0.67) { 
+    else if (value > 0.33 && value <= 0.67) { 
         return "paper"
     }
     else { 
