@@ -14,8 +14,8 @@ function getComputerChoice() {
 
 function getHumanChoice() { 
     let choice = prompt("Rock, paper or scissors?"); 
+    choice = choice.toLowerCase().trim(); 
 
-    choice = choice.toLowerCase; 
     while (choice) { 
         if (choice == "rock") { 
             return "rock"
@@ -28,11 +28,13 @@ function getHumanChoice() {
         }
         else { 
             alert("Invalid input! Enter the word rock, paper or scissors!");
+            choice = prompt("Rock, paper or scissors?");
+            choice = choice.toLowerCase().trim(); 
         }
     }
 }
 
-let humanChoice = getHumanChoice(); 
-console.log(getComputerChoice())
+console.log(getHumanChoice()); 
+console.log(getComputerChoice()); 
 
 
