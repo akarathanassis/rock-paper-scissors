@@ -44,12 +44,49 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock") { 
         if (computerChoice == "rock") { 
             console.log("Draw!"); 
-            return 
+            return DRAW; 
+        }
+        if (computerChoice == "paper") { 
+            console.log("You Lose! Paper beats Rock"); 
+            return COMPUTER_WIN; 
+        }
+        if (computerChoice == "scissors") { 
+            console.log("You Win! Rock beats Scissors")
+            return HUMAN_WIN; 
+        }
+    }
+    if (humanChoice == "paper") { 
+        if (computerChoice == "rock") { 
+            console.log("You Win! Paper beats Rock"); 
+            return HUMAN_WIN; 
+        }
+        if (computerChoice == "paper") { 
+            console.log("Draw!"); 
+            return DRAW; 
+        }
+        if (computerChoice == "scissors") { 
+            console.log("You Lose! Scissors beats Paper")
+            return COMPUTER_WIN; 
+        }
+    }
+    if (humanChoice == "scissors") { 
+        if (computerChoice == "rock") { 
+            console.log("You Lose! Rock beats Scissors"); 
+            return COMPUTER_WIN; 
+        }
+        if (computerChoice == "paper") { 
+            console.log("You Win! Scissors beats Paper"); 
+            return HUMAN_WIN; 
+        }
+        if (computerChoice == "scissors") { 
+            console.log("Draw!")
+            return DRAW; 
         }
     }
 }
 
-console.log(getHumanChoice()); 
-console.log(getComputerChoice()); 
+let humanChoice = getHumanChoice(); 
+let computerChoice = getComputerChoice(); 
+console.log(playRound(humanChoice, computerChoice)); 
 
 
