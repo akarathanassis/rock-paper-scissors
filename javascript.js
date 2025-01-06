@@ -5,7 +5,7 @@ const DRAW = 2;
 const buttons = document.querySelectorAll("button"); 
 buttons.forEach((button) => { 
     button.addEventListener("click", () => {
-        alert(button.id); 
+        playRound(getHumanChoice(button.id), getComputerChoice()); 
     }); 
 }); 
 
@@ -24,26 +24,26 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() { 
-    let choice = prompt("Rock, paper or scissors?"); 
-    choice = choice.toLowerCase().trim(); 
+function getHumanChoice(humanChoice) { 
+    return humanChoice
+    // choice = choice.toLowerCase().trim(); 
 
-    while (choice) { 
-        if (choice == "rock") { 
-            return "rock"
-        }
-        else if (choice == "paper") { 
-            return "paper"
-        }
-        else if (choice == "scissors") { 
-            return "scissors"
-        }
-        else { 
-            alert("Invalid input! Enter the word rock, paper or scissors!");
-            choice = prompt("Rock, paper or scissors?");
-            choice = choice.toLowerCase().trim(); 
-        }
-    }
+    // while (choice) { 
+    //     if (choice == "rock") { 
+    //         return "rock"
+    //     }
+    //     else if (choice == "paper") { 
+    //         return "paper"
+    //     }
+    //     else if (choice == "scissors") { 
+    //         return "scissors"
+    //     }
+    //     else { 
+    //         alert("Invalid input! Enter the word rock, paper or scissors!");
+    //         choice = prompt("Rock, paper or scissors?");
+    //         choice = choice.toLowerCase().trim(); 
+    //     }
+    // }
 }
 
 function playRound(humanChoice, computerChoice) { 
@@ -90,6 +90,8 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
+
+playRound(getHumanChoice(), getComputerChoice()); 
 
 // function playGame() { 
 //     let humanScore = 0; 
