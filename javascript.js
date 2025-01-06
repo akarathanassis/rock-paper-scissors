@@ -3,18 +3,17 @@ const COMPUTER_WIN = 1;
 const DRAW = 2; 
 let compScore = 0; 
 let humanScore = 0; 
+const outcome = document.querySelector(".outcome"); 
+const playerScore = document.querySelector("#human-score"); 
+const computerScore = document.querySelector("#comp-score"); 
 
 const buttons = document.querySelectorAll("button"); 
 buttons.forEach((button) => { 
     button.addEventListener("click", () => {
         playRound(getHumanChoice(button.id), getComputerChoice()); 
+        checkScore(compScore, humanScore); 
     }); 
 }); 
-
-const outcome = document.querySelector(".outcome"); 
-
-const playerScore = document.querySelector("#human-score"); 
-const computerScore = document.querySelector("#comp-score"); 
 
 function getComputerChoice() { 
     let value = Math.random(); 
@@ -76,40 +75,12 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-// function playGame() { 
-//     let humanScore = 0; 
-//     let computerScore = 0; 
-
-//     for (let i = 0; i < 5; i++) { 
-//         let humanChoice = getHumanChoice(); 
-//         let computerChoice = getComputerChoice(); 
-//         let result = playRound(humanChoice, computerChoice); 
-//         if (result == DRAW) { 
-//             continue; 
-//         }
-//         if (result == HUMAN_WIN) { 
-//             humanScore++; 
-//         }
-//         if (result == COMPUTER_WIN) { 
-//             computerScore++; 
-//         }
-//     }
-    
-//     // return outcome of the game 
-//     if (humanScore > computerScore) { 
-//         return `You Win! ${humanScore} to ${computerScore}`
-//     }
-//     else if (humanScore < computerScore) { 
-//         return `You Lose! ${humanScore} to ${computerScore}` 
-//     }
-//     else { 
-//         return `Draw! ${humanScore} to ${computerScore}`
-//     }
-// }
-
-// console.log(playGame()); 
-// let humanChoice = getHumanChoice(); 
-// let computerChoice = getComputerChoice(); 
-// console.log(playRound(humanChoice, computerChoice)); 
-
+function checkScore(compScore, humanScore) { 
+    if (compScore == 5) { 
+        alert("Game Over! Computer Wins")
+    }
+    else if (humanScore == 5) { 
+        alert("Game Over! You Win!")
+    }
+}
 
