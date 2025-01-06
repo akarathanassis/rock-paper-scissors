@@ -83,38 +83,38 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() { 
-    let humanScore = 0; 
-    let computerScore = 0; 
+// function playGame() { 
+//     let humanScore = 0; 
+//     let computerScore = 0; 
 
-    for (let i = 0; i < 5; i++) { 
-        let humanChoice = getHumanChoice(); 
-        let computerChoice = getComputerChoice(); 
-        let result = playRound(humanChoice, computerChoice); 
-        if (result == DRAW) { 
-            continue; 
-        }
-        if (result == HUMAN_WIN) { 
-            humanScore++; 
-        }
-        if (result == COMPUTER_WIN) { 
-            computerScore++; 
-        }
-    }
+//     for (let i = 0; i < 5; i++) { 
+//         let humanChoice = getHumanChoice(); 
+//         let computerChoice = getComputerChoice(); 
+//         let result = playRound(humanChoice, computerChoice); 
+//         if (result == DRAW) { 
+//             continue; 
+//         }
+//         if (result == HUMAN_WIN) { 
+//             humanScore++; 
+//         }
+//         if (result == COMPUTER_WIN) { 
+//             computerScore++; 
+//         }
+//     }
     
-    // return outcome of the game 
-    if (humanScore > computerScore) { 
-        return `You Win! ${humanScore} to ${computerScore}`
-    }
-    else if (humanScore < computerScore) { 
-        return `You Lose! ${humanScore} to ${computerScore}` 
-    }
-    else { 
-        return `Draw! ${humanScore} to ${computerScore}`
-    }
-}
+//     // return outcome of the game 
+//     if (humanScore > computerScore) { 
+//         return `You Win! ${humanScore} to ${computerScore}`
+//     }
+//     else if (humanScore < computerScore) { 
+//         return `You Lose! ${humanScore} to ${computerScore}` 
+//     }
+//     else { 
+//         return `Draw! ${humanScore} to ${computerScore}`
+//     }
+// }
 
-console.log(playGame()); 
+// console.log(playGame()); 
 // let humanChoice = getHumanChoice(); 
 // let computerChoice = getComputerChoice(); 
 // console.log(playRound(humanChoice, computerChoice)); 
