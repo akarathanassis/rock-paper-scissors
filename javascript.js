@@ -1,6 +1,8 @@
 const HUMAN_WIN = 0; 
 const COMPUTER_WIN = 1; 
 const DRAW = 2; 
+let compScore = 0; 
+let humanScore = 0; 
 
 const buttons = document.querySelectorAll("button"); 
 buttons.forEach((button) => { 
@@ -10,6 +12,9 @@ buttons.forEach((button) => {
 }); 
 
 const outcome = document.querySelector(".outcome"); 
+
+const playerScore = document.querySelector("#human-score"); 
+const computerScore = document.querySelector("#comp-score"); 
 
 function getComputerChoice() { 
     let value = Math.random(); 
@@ -33,48 +38,43 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock") { 
         if (computerChoice == "rock") { 
             outcome.textContent = "Draw!"; 
-            return DRAW; 
         }
         if (computerChoice == "paper") { 
             outcome.textContent = "You Lose! Paper beats Rock"; 
-            return COMPUTER_WIN; 
+            computerScore.textContent = `Computer Score: ${++compScore}`;  
         }
         if (computerChoice == "scissors") { 
             outcome.textContent = "You Win! Rock beats Scissors"; 
-            return HUMAN_WIN; 
+            playerScore.textContent = `Player Score: ${++humanScore}`;
         }
     }
     if (humanChoice == "paper") { 
         if (computerChoice == "rock") { 
             outcome.textContent = "You Win! Paper beats Rock";
-            return HUMAN_WIN; 
+            playerScore.textContent = `Player Score: ${++humanScore}`; 
         }
         if (computerChoice == "paper") { 
             outcome.textContent = "Draw!"; 
-            return DRAW; 
         }
         if (computerChoice == "scissors") { 
             outcome.textContent = "You Lose! Scissors beats Paper!";
-            return COMPUTER_WIN; 
+            computerScore.textContent = `Computer Score: ${++compScore}`; 
         }
     }
     if (humanChoice == "scissors") { 
         if (computerChoice == "rock") { 
             outcome.textContent = "You Lose! Rock beats Scissors!"; 
-            return COMPUTER_WIN; 
+            computerScore.textContent = `Computer Score: ${++compScore}`; 
         }
         if (computerChoice == "paper") { 
             outcome.textContent = "You Win! Scissors beats Paper"; 
-            return HUMAN_WIN; 
+            playerScore.textContent = `Player Score: ${++humanScore}`; 
         }
         if (computerChoice == "scissors") { 
             outcome.textContent = "Draw!"; 
-            return DRAW; 
         }
     }
 }
-
-playRound(getHumanChoice(), getComputerChoice()); 
 
 // function playGame() { 
 //     let humanScore = 0; 
