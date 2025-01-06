@@ -2,6 +2,14 @@ const HUMAN_WIN = 0;
 const COMPUTER_WIN = 1; 
 const DRAW = 2; 
 
+const buttons = document.querySelectorAll("button"); 
+buttons.forEach((button) => { 
+    button.addEventListener("click", () => {
+        alert(button.id); 
+    }); 
+}); 
+
+
 function getComputerChoice() { 
     let value = Math.random(); 
 
