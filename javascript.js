@@ -9,6 +9,7 @@ buttons.forEach((button) => {
     }); 
 }); 
 
+const outcome = document.querySelector(".outcome"); 
 
 function getComputerChoice() { 
     let value = Math.random(); 
@@ -31,43 +32,43 @@ function getHumanChoice(humanChoice) {
 function playRound(humanChoice, computerChoice) { 
     if (humanChoice == "rock") { 
         if (computerChoice == "rock") { 
-            console.log("Draw!"); 
+            outcome.textContent = "Draw!"; 
             return DRAW; 
         }
         if (computerChoice == "paper") { 
-            console.log("You Lose! Paper beats Rock"); 
+            outcome.textContent = "You Lose! Paper beats Rock"; 
             return COMPUTER_WIN; 
         }
         if (computerChoice == "scissors") { 
-            console.log("You Win! Rock beats Scissors")
+            outcome.textContent = "You Win! Rock beats Scissors"; 
             return HUMAN_WIN; 
         }
     }
     if (humanChoice == "paper") { 
         if (computerChoice == "rock") { 
-            console.log("You Win! Paper beats Rock"); 
+            outcome.textContent = "You Win! Paper beats Rock";
             return HUMAN_WIN; 
         }
         if (computerChoice == "paper") { 
-            console.log("Draw!"); 
+            outcome.textContent = "Draw!"; 
             return DRAW; 
         }
         if (computerChoice == "scissors") { 
-            console.log("You Lose! Scissors beats Paper")
+            outcome.textContent = "You Lose! Scissors beats Paper!";
             return COMPUTER_WIN; 
         }
     }
     if (humanChoice == "scissors") { 
         if (computerChoice == "rock") { 
-            console.log("You Lose! Rock beats Scissors"); 
+            outcome.textContent = "You Lose! Rock beats Scissors!"; 
             return COMPUTER_WIN; 
         }
         if (computerChoice == "paper") { 
-            console.log("You Win! Scissors beats Paper"); 
+            outcome.textContent = "You Win! Scissors beats Paper"; 
             return HUMAN_WIN; 
         }
         if (computerChoice == "scissors") { 
-            console.log("Draw!")
+            outcome.textContent = "Draw!"; 
             return DRAW; 
         }
     }
