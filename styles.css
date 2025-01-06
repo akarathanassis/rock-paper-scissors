@@ -1,19 +1,26 @@
 body { 
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: 0; 
-    padding: 0; 
     height: 100vh;
 }
 
 #buttons { 
     display: flex;
     justify-content: center;
-    margin: auto;
+    margin: 100px;
     gap: 100px; 
 }
 
 button { 
     padding: 50px;
     background-color: lightblue;
+}
+
+.results { 
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 }

@@ -26,24 +26,6 @@ function getComputerChoice() {
 
 function getHumanChoice(humanChoice) { 
     return humanChoice
-    // choice = choice.toLowerCase().trim(); 
-
-    // while (choice) { 
-    //     if (choice == "rock") { 
-    //         return "rock"
-    //     }
-    //     else if (choice == "paper") { 
-    //         return "paper"
-    //     }
-    //     else if (choice == "scissors") { 
-    //         return "scissors"
-    //     }
-    //     else { 
-    //         alert("Invalid input! Enter the word rock, paper or scissors!");
-    //         choice = prompt("Rock, paper or scissors?");
-    //         choice = choice.toLowerCase().trim(); 
-    //     }
-    // }
 }
 
 function playRound(humanChoice, computerChoice) { 
